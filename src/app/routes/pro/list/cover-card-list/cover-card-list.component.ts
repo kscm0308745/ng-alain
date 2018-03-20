@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd';
-import * as moment from 'moment';
 import { _HttpClient } from '@delon/theme';
 
 @Component({
@@ -71,10 +70,7 @@ export class ProCoverCardListComponent implements OnInit {
     getData() {
         this.loading = true;
         this.http.get('/api/list', { count: this.q.ps }).subscribe((res: any) => {
-            this.list = this.list.concat(res).map(item => {
-                if (item.updatedAt) item.updatedAt = moment(item.updatedAt).fromNow();
-                return item;
-            });
+            this.list = this.list.concat(res);
             this.loading = false;
         });
     }

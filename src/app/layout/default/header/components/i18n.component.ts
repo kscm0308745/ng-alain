@@ -24,19 +24,14 @@ export class HeaderI18nComponent {
     langs: any[];
 
     constructor(
-        private menuService: MenuService,
         public settings: SettingsService,
-        public tsServ: I18NService,
-        private titleServ: TitleService
+        public i18n: I18NService
     ) {
-        this.langs = this.tsServ.getLangs();
+        this.langs = this.i18n.getLangs();
     }
 
     change(lang: string) {
-        this.tsServ.use(lang, false).subscribe(() => {
-            this.menuService.resume();
-            this.titleServ.setTitle();
-        });
+        this.i18n.use(lang).subscribe();
         this.settings.setLayout('lang', lang);
     }
 }

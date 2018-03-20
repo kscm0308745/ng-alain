@@ -34,7 +34,7 @@ import { TransferService } from './transfer.service';
                 <label for="password" nz-form-item-required>支付密码</label>
             </div>
             <div nz-form-control nz-col [nzSm]="20" nzHasFeedback [nzValidateStatus]="password">
-                <nz-input formControlName="password" nzSize="large" nzType="password" nzId="password"></nz-input>
+                <nz-input formControlName="password" nzType="password" nzId="password"></nz-input>
                 <ng-container *ngIf="password.dirty || password.touched">
                     <p nz-form-explain *ngIf="password.errors?.required">请输入密码</p>
                     <p nz-form-explain *ngIf="password.errors?.minlength">至少6位数以上</p>
@@ -43,8 +43,8 @@ import { TransferService } from './transfer.service';
         </div>
         <div nz-form-item nz-row>
             <div nz-form-control nz-col [nzSpan]="20" [nzOffset]="4">
-                <button nz-button [nzType]="'primary'" nzSize="large" [nzLoading]="loading" [disabled]="form.invalid">提交</button>
-                <button nz-button (click)="prev()" nzSize="large">上一步</button>
+                <button nz-button [nzType]="'primary'" [nzLoading]="loading" [disabled]="form.invalid">提交</button>
+                <button nz-button (click)="prev()">上一步</button>
             </div>
         </div>
     </form>

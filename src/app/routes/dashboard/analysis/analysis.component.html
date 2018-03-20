@@ -1,6 +1,6 @@
 <div nz-row [nzGutter]="24" class="pt-lg">
     <div nz-col nzXs="24" nzSm="12" nzMd="12" nzLg="6">
-        <chart-card
+        <g2-card
             [title]="'总销售额'"
             total="¥ 126,560"
             contentHeight="46px"
@@ -8,7 +8,7 @@
             [footer]="footer1">
             <ng-template #action1>
                 <nz-tooltip [nzTitle]="'指标说明'">
-                    <nz-icon nz-tooltip nzType="info-circle-o"></nz-icon>
+                    <i class="anticon anticon-info-circle-o"></i>
                 </nz-tooltip>
             </ng-template>
             <trend flag="up" style="display:block; margin-top:2px;">周同比<span class="pl-sm">12%</span></trend>
@@ -16,71 +16,71 @@
             <ng-template #footer1>
                 <p class="text-truncate">日均销售额<span class="ml-sm">￥12,423</span></p>
             </ng-template>
-        </chart-card>
+        </g2-card>
     </div>
     <div nz-col nzXs="24" nzSm="12" nzMd="12" nzLg="6">
-        <chart-card [title]="'访问量'"
+        <g2-card [title]="'访问量'"
             total="8,848"
             contentHeight="46px"
             [action]="action2"
             [footer]="footer2">
             <ng-template #action2>
                 <nz-tooltip [nzTitle]="'指标说明'">
-                    <nz-icon nz-tooltip nzType="info-circle-o"></nz-icon>
+                    <i class="anticon anticon-info-circle-o"></i>
                 </nz-tooltip>
             </ng-template>
-            <mini-area
+            <g2-mini-area
                 color="#975FE4"
                 height="46"
-                [data]="data.visitData"></mini-area>
+                [data]="data.visitData"></g2-mini-area>
             <ng-template #footer2>
                 <p class="text-truncate">日访问量<span class="ml-sm">1,234</span></p>
             </ng-template>
-        </chart-card>
+        </g2-card>
     </div>
     <div nz-col nzXs="24" nzSm="12" nzMd="12" nzLg="6">
-        <chart-card [title]="'支付笔数'"
+        <g2-card [title]="'支付笔数'"
             total="6,560"
             contentHeight="46px"
             [action]="action3"
             [footer]="footer3">
             <ng-template #action3>
                 <nz-tooltip [nzTitle]="'指标说明'">
-                    <nz-icon nz-tooltip nzType="info-circle-o"></nz-icon>
+                    <i class="anticon anticon-info-circle-o"></i>
                 </nz-tooltip>
             </ng-template>
-            <mini-bar
+            <g2-mini-bar
                 height="46"
-                [data]="data.visitData"></mini-bar>
+                [data]="data.visitData"></g2-mini-bar>
             <ng-template #footer3>
                 <p class="text-truncate">转化率<span class="ml-sm">60%</span></p>
             </ng-template>
-        </chart-card>
+        </g2-card>
     </div>
     <div nz-col nzXs="24" nzSm="12" nzMd="12" nzLg="6">
-        <chart-card [title]="'运营活动效果'"
+        <g2-card [title]="'运营活动效果'"
             total="78%"
             contentHeight="46px"
             [action]="action4"
             [footer]="footer4">
             <ng-template #action4>
                 <nz-tooltip [nzTitle]="'指标说明'">
-                    <nz-icon nz-tooltip nzType="info-circle-o"></nz-icon>
+                    <i class="anticon anticon-info-circle-o"></i>
                 </nz-tooltip>
             </ng-template>
-            <mini-progress
+            <g2-mini-progress
                 height="46"
                 percent="78"
                 strokeWidth="8"
                 target="80"
-                color="#13C2C2"></mini-progress>
+                color="#13C2C2"></g2-mini-progress>
             <ng-template #footer4>
                 <div class="d-flex justify-content-between">
                     <trend flag="up">周同比<span class="pl-sm">12%</span></trend>
                     <trend flag="down">日环比<span class="pl-sm">11%</span></trend>
                 </div>
             </ng-template>
-        </chart-card>
+        </g2-card>
     </div>
 </div>
 <nz-card [nzLoading]="loading" [nzBordered]="false" nzNoPadding class="sales-card">
@@ -91,10 +91,10 @@
                 <div nz-row>
                     <div nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="16">
                         <div class="bar">
-                            <bar
+                            <g2-bar
                                 height="295"
                                 [title]="'销售额趋势'"
-                                [data]="data.salesData"></bar>
+                                [data]="data.salesData"></g2-bar>
                         </div>
                     </div>
                     <div nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="8">
@@ -118,10 +118,10 @@
                 <div nz-row>
                     <div nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="16">
                         <div class="bar">
-                            <bar
+                            <g2-bar
                                 height="295"
                                 [title]="'访问量趋势'"
-                                [data]="data.salesData"></bar>
+                                [data]="data.salesData"></g2-bar>
                         </div>
                     </div>
                     <div nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="8">
@@ -148,8 +148,6 @@
                         <a (click)="setDate('month')">本月</a>
                         <a (click)="setDate('year')">全年</a>
                     </div>
-                    <nz-datepicker style="width:120px" class="mr-md" [(ngModel)]="q.start" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
-                    <nz-datepicker style="width:120px" [(ngModel)]="q.end" [nzFormat]="'YYYY-MM-DD'" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
                 </div>
             </ng-template>
         </nz-tabset>
@@ -160,7 +158,7 @@
         <nz-card [nzLoading]="loading" [nzBordered]="false" nzTitle="线上热门搜索">
             <ng-template #extra>
                 <nz-dropdown>
-                    <nz-icon class="icon-group" nz-dropdown nzType="ellipsis"></nz-icon>
+                    <i class="anticon anticon-icon-group" nz-dropdown nzType="ellipsis"></i>
                     <ul nz-menu>
                         <li nz-menu-item>操作一</li>
                         <li nz-menu-item>操作二</li>
@@ -174,38 +172,32 @@
                             <ng-template #subTitle>
                                 搜索用户数
                                 <nz-tooltip [nzTitle]="'指标文案'">
-                                    <nz-icon nz-tooltip nzType="info-circle-o" class="ml-sm"></nz-icon>
+                                    <i class="anticon anticon-info-circle-o ml-sm"></i>
                                 </nz-tooltip>
                             </ng-template>
                         </number-info>
-                        <mini-area [line]="true" height="45" [data]="data.visitData2"></mini-area>
+                        <g2-mini-area [line]="true" height="45" [data]="data.visitData2"></g2-mini-area>
                     </div>
                     <div nz-col nzXs="24" nzSm="12" class="mb-md">
                         <number-info subTitle="人均搜索次数" total="2.7" subTotal="26.2" status="down"></number-info>
-                        <mini-area [line]="true" height="45" [data]="data.visitData2"></mini-area>
+                        <g2-mini-area [line]="true" height="45" [data]="data.visitData2"></g2-mini-area>
                     </div>
                 </div>
-                <nz-table #keyTable [nzDataSource]="data.searchData" [nzPageSize]="5" nzSize="small">
-                    <thead nz-thead>
+                <nz-table #keyTable [nzData]="data.searchData" [nzPageSize]="5" nzSize="small">
+                    <thead>
                         <tr>
-                            <th nz-th><span>排名</span></th>
-                            <th nz-th><span>搜索关键词</span></th>
-                            <th nz-th class="text-right">
-                                <span>用户数</span>
-                                <nz-table-sort (nzValueChange)="sort('count',$event)"></nz-table-sort>
-                            </th>
-                            <th nz-th class="text-right">
-                                <span>周涨幅</span>
-                                <nz-table-sort (nzValueChange)="sort('range',$event)"></nz-table-sort>
-                            </th>
+                            <th>排名</th>
+                            <th>搜索关键词</th>
+                            <th class="text-right" nzShowSort nzSortKey="count">用户数</th>
+                            <th class="text-right" nzShowSort nzSortKey="range">周涨幅</th>
                         </tr>
                     </thead>
-                    <tbody nz-tbody>
-                        <tr nz-tbody-tr *ngFor="let i of keyTable.data">
-                            <td nz-td>{{i.index}}</td>
-                            <td nz-td><a (click)="msg.success(i.keyword)">{{i.keyword}}</a></td>
-                            <td nz-td class="text-right">{{i.count}}</td>
-                            <td nz-td class="text-right">
+                    <tbody>
+                        <tr *ngFor="let i of keyTable.data">
+                            <td>{{i.index}}</td>
+                            <td><a (click)="msg.success(i.keyword)">{{i.keyword}}</a></td>
+                            <td class="text-right">{{i.count}}</td>
+                            <td class="text-right">
                                 <trend [flag]="i.status === 1 ? 'down' : 'up'">
                                     <span>{{i.range}}%</span>
                                 </trend>
@@ -221,14 +213,14 @@
             <ng-template #extra>
                 <div class="sales-card-extra">
                     <nz-dropdown>
-                        <nz-icon class="icon-group" nz-dropdown nzType="ellipsis"></nz-icon>
+                        <i class="anticon anticon-icon-group" nz-dropdown nzType="ellipsis"></i>
                         <ul nz-menu>
                             <li nz-menu-item>操作一</li>
                             <li nz-menu-item>操作二</li>
                         </ul>
                     </nz-dropdown>
                     <div class="sales-type-radio">
-                        <nz-radio-group [(ngModel)]="salesType" (ngModelChange)="changeSaleType()" [nzSize]="'large'">
+                        <nz-radio-group [(ngModel)]="salesType" (ngModelChange)="changeSaleType()">
                             <label nz-radio-button [nzValue]="'all'"><span>全部渠道</span></label>
                             <label nz-radio-button [nzValue]="'online'"><span>线上</span></label>
                             <label nz-radio-button [nzValue]="'offline'"><span>门店</span></label>
@@ -238,7 +230,7 @@
             </ng-template>
             <ng-template #body>
                 <h4 class="margin:8px 0 32px 0;">销售额</h4>
-                <pie
+                <g2-pie
                     [hasLegend]="true"
                     subTitle="销售额"
                     [height]="248"
@@ -246,7 +238,7 @@
                     [total]="salesTotal"
                     [data]="salesPieData"
                     [valueFormat]="handlePieValueFormat">
-                </pie>
+                </g2-pie>
             </ng-template>
         </nz-card>
     </div>
@@ -266,7 +258,7 @@
                                 [theme]="i !== _activeTab && 'light'"></number-info>
                         </div>
                         <div nz-col [nzSpan]="12" style="padding-top: 36px">
-                            <pie
+                            <g2-pie
                                 [animate]="false"
                                 [color]="i !== _activeTab && '#BDE4FF'"
                                 [inner]="0.55"
@@ -274,13 +266,13 @@
                                 [padding]="[0, 0, 0, 0]"
                                 [percent]="tab.cvr * 100"
                                 [height]="64">
-                            </pie>
+                            </g2-pie>
                         </div>
                     </div>
                 </ng-template>
                 <div class="px-lg">
-                    <timeline [data]="tab.chart"
-                              [titleMap]="{ y1: '客流量', y2: '支付笔数' }"></timeline>
+                    <g2-timeline [data]="tab.chart"
+                              [titleMap]="{ y1: '客流量', y2: '支付笔数' }"></g2-timeline>
                 </div>
             </nz-tab>
         </nz-tabset>

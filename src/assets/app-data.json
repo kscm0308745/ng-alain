@@ -5,7 +5,7 @@
     },
     "user": {
         "name": "Admin",
-        "avatar": "./assets/img/zorro.svg",
+        "avatar": "./assets/img/avatar.jpg",
         "email": "cipchk@qq.com"
     },
     "menu": [{
@@ -58,44 +58,6 @@
             "icon": "icon-chemistry",
             "acl": "user1",
             "children": [{
-                "text": "按钮",
-                "link": "/elements/buttons",
-                "i18n": "buttons",
-                "shortcut": true
-            }, {
-                "text": "Notification",
-                "link": "/elements/notification",
-                "i18n": "notification",
-                "shortcut": true
-            }, {
-                "text": "Modal",
-                "link": "/elements/modal",
-                "i18n": "modal"
-            }, {
-                "text": "SweetAlert",
-                "link": "/elements/sweetalert",
-                "i18n": "sweetalert"
-            }, {
-                "text": "Tree Antd",
-                "link": "/elements/tree-antd",
-                "i18n": "tree-antd"
-            }, {
-                "text": "Sortable",
-                "link": "/elements/sortable",
-                "i18n": "sortable"
-            }, {
-                "text": "Spin",
-                "link": "/elements/spin",
-                "i18n": "spin"
-            }, {
-                "text": "Dropdown",
-                "link": "/elements/dropdown",
-                "i18n": "dropdown"
-            }, {
-                "text": "Grid",
-                "link": "/elements/grid",
-                "i18n": "grid"
-            }, {
                 "text": "Grid Masonry",
                 "link": "/elements/gridmasonry",
                 "i18n": "gridmasonry"
@@ -118,13 +80,13 @@
             "link": "/other",
             "icon": "icon-magic-wand",
             "children": [{
-                "text": "Split",
-                "link": "/other/split",
-                "i18n": "split"
-            }, {
                 "text": "Clipboard",
                 "link": "/other/clipboard",
                 "i18n": "clipboard"
+            }, {
+                "text": "Print",
+                "link": "/other/print",
+                "i18n": "print"
             }]
         }, {
             "text": "表单",

@@ -1,4 +1,4 @@
-<pro-header [title]="'卡片列表'">
+<page-header [title]="'卡片列表'">
     <ng-template #extra>
         <div style="margin-top: -60px; text-align: center; width: 195px;">
             <img class="img-fluid" src="https://gw.alipayobjects.com/zos/rmsportal/RzwpdLnhmvDJToTdfDPe.png">
@@ -18,7 +18,7 @@
             </a>
         </div>
     </ng-template>
-</pro-header>
+</page-header>
 <nz-list [nzLoading]="loading" [nzDataSource]="list"
          [nzGrid]="{gutter: 24, lg: 8, md: 12, sm: 24, xs: 24 }">
     <ng-template #item let-item>

@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd';
-import * as moment from 'moment';
 import { _HttpClient } from '@delon/theme';
 
 @Component({
@@ -57,7 +56,6 @@ export class ProFilterCardListComponent implements OnInit {
         this.loading = true;
         this.http.get('/api/list', { count: this.q.ps }).subscribe((res: any) => {
             this.list = res.map(item => {
-                if (item.updatedAt) item.updatedAt = moment(item.updatedAt).fromNow();
                 item.activeUser = this.formatWan(item.activeUser);
                 return item;
             });

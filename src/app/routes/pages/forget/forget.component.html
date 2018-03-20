@@ -7,7 +7,7 @@
             <form nz-form [formGroup]="valForm" (ngSubmit)="submit()" role="form">
                 <div nz-form-item>
                     <div nz-form-control [nzValidateStatus]="valForm.controls.email">
-                        <nz-input formControlName="email" [nzPlaceHolder]="'邮箱'" [nzSize]="'large'">
+                        <nz-input formControlName="email" [nzPlaceHolder]="'邮箱'">
                             <ng-template #suffix>
                                 <i class="anticon anticon-mail"></i>
                             </ng-template>
@@ -17,7 +17,7 @@
                 </div>
                 <div nz-row>
                     <div nz-col [nzSpan]="24">
-                        <button nz-button [disabled]="!valForm.valid" [nzType]="'danger'" [nzSize]="'large'" class="ant-btn__block">
+                        <button nz-button [disabled]="!valForm.valid" [nzType]="'danger'" class="ant-btn__block">
                             <span>发送密码</span>
                         </button>
                     </div>

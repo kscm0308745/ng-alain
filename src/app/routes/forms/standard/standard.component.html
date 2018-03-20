@@ -130,7 +130,7 @@
                                 <label [attr.for]="'field' + control.index">Field {{control.index}}</label>
                             </div>
                             <div nz-form-control nz-col [nzSpan]="19">
-                                <nz-input [nzSize]="'large'" [nzPlaceHolder]="'placeholder'" [formControlName]="'field'+control.index" [nzId]="'field'+control.index"></nz-input>
+                                <nz-input [nzPlaceHolder]="'placeholder'" [formControlName]="'field'+control.index" [nzId]="'field'+control.index"></nz-input>
                             </div>
                         </div>
                     </div>
@@ -332,7 +332,7 @@
                         <label>Switch</label>
                     </div>
                     <div nz-form-control nz-col [nzSm]="20">
-                        <nz-switch [nzSize]="'large'" class="mr-sm"></nz-switch>
+                        <nz-switch class="mr-sm"></nz-switch>
                         <nz-switch class="mr-sm"></nz-switch>
                         <nz-switch [nzSize]="'small'"></nz-switch>
                     </div>
@@ -385,7 +385,7 @@
                         <label>Control sizing</label>
                     </div>
                     <div nz-form-control nz-col [nzSm]="20">
-                        <nz-input [nzPlaceHolder]="'large size'" [nzSize]="'large'"></nz-input>
+                        <nz-input [nzPlaceHolder]="'large size'"></nz-input>
                         <nz-input [nzPlaceHolder]="'default size'"></nz-input>
                         <nz-input [nzPlaceHolder]="'small size'" [nzSize]="'small'"></nz-input>
                     </div>

@@ -31,8 +31,8 @@ import { TransferService } from './transfer.service';
     </div>
     <div nz-row class="my-md py-md">
         <div nz-col>
-            <button nz-button (click)="item.again()" nzSize="large" [nzType]="'primary'">再转一笔</button>
-            <button nz-button nzSize="large" class="ml-sm">查看账单</button>
+            <button nz-button (click)="item.again()" [nzType]="'primary'">再转一笔</button>
+            <button nz-button class="ml-sm">查看账单</button>
         </div>
     </div>
     `

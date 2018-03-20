@@ -3,8 +3,7 @@ import { _HttpClient } from '@delon/theme';
 
 @Component({
     selector: 'pro-list-search',
-    templateUrl: './search.component.html',
-    styleUrls: ['./search.component.less']
+    templateUrl: './search.component.html'
 })
 export class ProSearchComponent implements OnInit {
     q: any = {

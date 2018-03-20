@@ -1,14 +1,17 @@
 import { Injectable, Inject, Injector } from '@angular/core';
 import { Router } from '@angular/router';
-import { zhCN, enUS, NzLocaleService } from 'ng-zorro-antd';
+import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { filter } from 'rxjs/operators';
+
+import { en_US, zh_CN, NzI18nService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsService, AlainI18NService } from '@delon/theme';
-import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class I18NService implements AlainI18NService {
-
     private _default = 'zh-CN';
+    private change$ = new BehaviorSubject<string>(null);
 
     private _langs = [
         { code: 'en', text: 'English' },
@@ -17,7 +20,7 @@ export class I18NService implements AlainI18NService {
 
     constructor(
         settings: SettingsService,
-        private nzLocalService: NzLocaleService,
+        private nzI18nService: NzI18nService,
         private translate: TranslateService,
         private injector: Injector
     ) {
@@ -27,11 +30,13 @@ export class I18NService implements AlainI18NService {
         translate.addLangs(lans);
     }
 
-    use(lang: string = null, firstLoad = true): Observable<any> {
+    get change(): Observable<string> {
+        return this.change$.asObservable().pipe(filter(w => w != null));
+    }
+
+    use(lang: string): Observable<any> {
         lang = lang || this.translate.getDefaultLang();
-        this.nzLocalService.setLocale(lang === 'en' ? enUS : zhCN);
-        // need reload router because of ng-zorro-antd local system
-        if (!firstLoad) this.injector.get(Router).navigate([ '/' ]);
+        this.nzI18nService.setLocale(lang === 'en' ? en_US : zh_CN);
         return this.translate.use(lang);
     }
     /** 获取语言列表 */

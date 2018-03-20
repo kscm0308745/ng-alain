@@ -1,4 +1,4 @@
-<pro-header [title]="'查询表格'"></pro-header>
+<page-header [title]="'查询表格'"></page-header>
 <nz-card [nzBordered]="false">
     <form nz-form (ngSubmit)="getData()" [nzLayout]="'inline'">
         <div nz-row [nzGutter]="24">
@@ -6,7 +6,7 @@
                 <div nz-form-item class="d-flex">
                     <div nz-form-label><label for="no">规则编号</label></div>
                     <div nz-form-control class="flex-1">
-                        <nz-input [(ngModel)]="q.no" name="no" [nzSize]="'large'" [nzPlaceHolder]="'请输入'" nzId="no"></nz-input>
+                        <nz-input [(ngModel)]="q.no" name="no" [nzPlaceHolder]="'请输入'" nzId="no"></nz-input>
                     </div>
                 </div>
             </div>
@@ -14,7 +14,7 @@
                 <div nz-form-item class="d-flex">
                     <div nz-form-label><label for="status">使用状态</label></div>
                     <div nz-form-control class="flex-1">
-                        <nz-select [(ngModel)]="q.status" name="status" nzId="status" [nzPlaceHolder]="'请选择'" [nzShowSearch]="true" [nzSize]="'large'">
+                        <nz-select [(ngModel)]="q.status" name="status" nzId="status" [nzPlaceHolder]="'请选择'" [nzShowSearch]="true">
                             <nz-option *ngFor="let i of status; let idx = index" [nzLabel]="i.text" [nzValue]="idx"></nz-option>
                         </nz-select>
                     </div>
@@ -24,7 +24,7 @@
                 <div nz-form-item class="d-flex">
                     <div nz-form-label><label for="callNo">调用次数</label></div>
                     <div nz-form-control class="flex-1">
-                        <nz-input [nzSize]="'large'" nzId="callNo"></nz-input>
+                        <nz-input nzId="callNo"></nz-input>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 <div nz-form-item class="d-flex">
                     <div nz-form-label><label for="updatedAt">更新日期</label></div>
                     <div nz-form-control class="flex-1">
-                        <nz-datepicker [nzSize]="'large'" [nzPlaceHolder]="'请输入更新日期'" nzId="updatedAt" class="d-block"></nz-datepicker>
+                        <nz-datepicker [nzPlaceHolder]="'请输入更新日期'" nzId="updatedAt" class="d-block"></nz-datepicker>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                 <div nz-form-item class="d-flex">
                     <div nz-form-label><label for="status2">使用状态</label></div>
                     <div nz-form-control class="flex-1">
-                        <nz-select [nzPlaceHolder]="'请选择'" nzId="status2" [nzShowSearch]="true" [nzSize]="'large'">
+                        <nz-select [nzPlaceHolder]="'请选择'" nzId="status2" [nzShowSearch]="true">
                             <nz-option *ngFor="let i of status; let idx = index" [nzLabel]="i.text" [nzValue]="idx"></nz-option>
                         </nz-select>
                     </div>
@@ -50,15 +50,15 @@
                 <div nz-form-item class="d-flex">
                     <div nz-form-label><label for="status3">使用状态</label></div>
                     <div nz-form-control class="flex-1">
-                        <nz-select [nzPlaceHolder]="'请选择'" nzId="status3" [nzShowSearch]="true" [nzSize]="'large'">
+                        <nz-select [nzPlaceHolder]="'请选择'" nzId="status3" [nzShowSearch]="true">
                             <nz-option *ngFor="let i of status; let idx = index" [nzLabel]="i.text" [nzValue]="idx"></nz-option>
                         </nz-select>
                     </div>
                 </div>
             </div>
             <div nz-col [nzSpan]="expandForm ? 24 : 8" class="mb-md" [class.text-right]="expandForm">
-                <button nz-button type="submit" [nzType]="'primary'" [nzLoading]="loading" [nzSize]="'large'">查询</button>
-                <button nz-button type="reset" (click)="getData()" [nzSize]="'large'" class="mx-sm">重置</button>
+                <button nz-button type="submit" [nzType]="'primary'" [nzLoading]="loading">查询</button>
+                <button nz-button type="reset" (click)="getData()" class="mx-sm">重置</button>
                 <a (click)="expandForm=!expandForm">
                     {{expandForm ? '收起' : '展开'}}
                     <i class="anticon" [class.anticon-down]="!expandForm" [class.anticon-up]="expandForm"></i>
@@ -67,13 +67,13 @@
         </div>
     </form>
     <div class="mb-md">
-        <button nz-button (click)="add()" [nzType]="'primary'" [nzSize]="'large'">
+        <button nz-button (click)="add()" [nzType]="'primary'">
             <i class="anticon anticon-plus"></i><span>新建</span>
         </button>
         <ng-container *ngIf="selectedRows.length > 0">
-            <button nz-button [nzSize]="'large'" class="ml-sm">批量操作</button>
+            <button nz-button class="ml-sm">批量操作</button>
             <nz-dropdown [nzPlacement]="'bottomLeft'">
-                <button nz-button nz-dropdown [nzSize]="'large'" class="ml-sm">
+                <button nz-button nz-dropdown class="ml-sm">
                     更多操作 <i class="anticon anticon-down"></i>
                 </button>
                 <ul nz-menu>
@@ -155,7 +155,7 @@
         <div nz-form-item class="d-flex">
             <div nz-form-label><label for="no">描述</label></div>
             <div nz-form-control class="flex-1">
-                <nz-input [(ngModel)]="description" name="description" [nzSize]="'large'" [nzPlaceHolder]="'请输入'" nzId="no"></nz-input>
+                <nz-input [(ngModel)]="description" name="description" [nzPlaceHolder]="'请输入'" nzId="no"></nz-input>
             </div>
         </div>
     </ng-template>

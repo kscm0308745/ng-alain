@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd';
-import { NzClipboardService } from 'ng-clipboard-antd';
+import { copy } from '@delon/abc';
 
 @Component({
   selector: 'app-clipboard',
@@ -13,9 +13,9 @@ export class ClipboardComponent {
 
     中文！@#￥%……&*`;
 
-    constructor(private srv: NzClipboardService, public messageSrv: NzMessageService) {}
+    constructor(public messageSrv: NzMessageService) {}
 
-    copy() {
-        this.srv.copyFromContent(`time ${+new Date}`);
+    onCopy() {
+        copy(`time ${+new Date}`).then(() => this.messageSrv.success(`success`));
     }
 }

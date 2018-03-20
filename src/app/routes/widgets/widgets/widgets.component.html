@@ -166,7 +166,7 @@
     <div nz-col [nzXs]="24" [nzSm]="8">
         <nz-card nzNoPadding>
             <div class="text-center bg-center py-lg text-white" style="background-image: url('./assets/img/bg9.jpg')">
-                <nz-avatar [nzSrc]="'./assets/img/1.png'" [nzSize]="'large'"></nz-avatar>
+                <nz-avatar [nzSrc]="'./assets/img/1.png'"></nz-avatar>
                 <h3 class="text-white">cipchk</h3>
                 <p>
                     <i class="fa fa-github fa-fw"></i>
@@ -532,7 +532,7 @@
                     </div>
                 </div>
                 <div nz-col [nzSpan]="5" class="text-right">
-                    <button nz-button (click)="msg.info('Apply')" [nzType]="'default'" [nzSize]="'large'">
+                    <button nz-button (click)="msg.info('Apply')" [nzType]="'default'">
                         <span>申请</span>
                     </button>
                 </div>
@@ -733,7 +733,7 @@
             <div nz-row [nzType]="'flex'" [nzJustify]="'center'" [nzAlign]="'middle'" class="py-sm bg-grey-lighter-h point"
                 *ngFor="let item of todoData">
                 <div nz-col [nzSpan]="4" class="text-center">
-                    <nz-avatar [nzSrc]="'./assets/img/' + item.avatar + '.png'" [nzSize]="'large'"></nz-avatar>
+                    <nz-avatar [nzSrc]="'./assets/img/' + item.avatar + '.png'"></nz-avatar>
                 </div>
                 <div nz-col [nzSpan]="20">
                     <strong>{{item.name}}</strong>
@@ -747,7 +747,7 @@
             <div nz-row [nzType]="'flex'" [nzJustify]="'center'" [nzAlign]="'middle'" class="py-sm bg-grey-lighter-h point"
                 *ngFor="let item of todoData">
                 <div nz-col [nzSpan]="4" class="text-center">
-                    <nz-avatar [nzSrc]="'./assets/img/' + item.avatar + '.png'" [nzSize]="'large'"></nz-avatar>
+                    <nz-avatar [nzSrc]="'./assets/img/' + item.avatar + '.png'"></nz-avatar>
                 </div>
                 <div nz-col [nzSpan]="18">
                     <strong>{{item.name}}</strong>

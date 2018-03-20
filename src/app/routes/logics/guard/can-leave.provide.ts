@@ -15,15 +15,15 @@ export class CanLeaveProvide implements CanDeactivate<GuardComponent> {
         nextState?: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
         return new Observable((observer) => {
             this.confirmSrv.confirm({
-                title: '确认要离开吗？',
-                content: '你已经填写了部分表单离开会放弃已经填写的内容。',
-                okText: '离开',
-                cancelText: '取消',
-                onOk: () => {
+                nzTitle: '确认要离开吗？',
+                nzContent: '你已经填写了部分表单离开会放弃已经填写的内容。',
+                nzOkText: '离开',
+                nzCancelText: '取消',
+                nzOnOk: () => {
                     observer.next(true);
                     observer.complete();
                 },
-                onCancel: () => {
+                nzOnCancel: () => {
                     observer.next(false);
                     observer.complete();
                 }

@@ -125,7 +125,7 @@
             </div>
             <h2 class="py-md mt-lg border-bottom-1">Change username</h2>
             <p class="py-sm">Changing your username can have unintended side effects.</p>
-            <button nz-button (click)="msg.info('to change username page')" [nzSize]="'large'">
+            <button nz-button (click)="msg.info('to change username page')">
                 <span>Change username</span>
             </button>
         </nz-card>
@@ -147,16 +147,16 @@
                 </div>
             </div>
             <h4 class="pt-md mb-sm">Add email address</h4>
-            <nz-input [nzSize]="'large'" style="width: 200px"></nz-input>
-            <button nz-button (click)="msg.info('add')" [nzSize]="'large'">
+            <nz-input style="width: 200px"></nz-input>
+            <button nz-button (click)="msg.info('add')">
                 <span>Add</span>
             </button>
             <h4 class="border-top-1 py-md mt-md">Primary email address</h4>
             <p class="mb-md">cipchk@qq.com will be used for account-related notifications and for web-based GitHub operations (e.g. edits and merges).</p>
-            <nz-select [nzSize]="'large'" [(ngModel)]="primary_email">
+            <nz-select [(ngModel)]="primary_email">
                 <nz-option [nzLabel]="'cipchk@qq.com'" [nzValue]="'cipchk@qq.com'"></nz-option>
             </nz-select>
-            <button nz-button (click)="msg.info('save')" [nzSize]="'large'">
+            <button nz-button (click)="msg.info('save')">
                 <span>Save</span>
             </button>
         </nz-card>
@@ -196,7 +196,7 @@
             <div class="border rounded-md text-center p-lg bg-grey-lighter">
                 <h3>No OAuth applications</h3>
                 <p class="py-md">OAuth applications are used to access the GitHub API. Read the docs to find out more.</p>
-                <button nz-button (click)="msg.inof('Register a new application')" [nzType]="'primary'" [nzSize]="'large'">
+                <button nz-button (click)="msg.inof('Register a new application')" [nzType]="'primary'">
                     <span>Register a new application</span>
                 </button>
             </div>

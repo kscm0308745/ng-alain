@@ -11,7 +11,7 @@ import { TransferService } from './transfer.service';
                 <label for="pay_account" nz-form-item-required>付款账户</label>
             </div>
             <div nz-form-control nz-col [nzSm]="20">
-                <nz-select formControlName="pay_account" nzSize="large" nzId="pay_account">
+                <nz-select formControlName="pay_account" nzId="pay_account">
                     <nz-option [nzLabel]="item.pay_account" [nzValue]="item.pay_account"></nz-option>
                 </nz-select>
             </div>
@@ -22,11 +22,11 @@ import { TransferService } from './transfer.service';
             </div>
             <div nz-form-control nz-col [nzSm]="20" nzHasFeedback [nzValidateStatus]="receiver_account">
                 <nz-input-group [nzCompact]="true">
-                    <nz-select formControlName="receiver_type" nzSize="large" style="width: 25%;">
+                    <nz-select formControlName="receiver_type" style="width: 25%;">
                         <nz-option [nzLabel]="'支付宝'" [nzValue]="'alipay'"></nz-option>
                         <nz-option [nzLabel]="'银行账号'" [nzValue]="'bank'"></nz-option>
                     </nz-select>
-                    <input formControlName="receiver_account" nzSize="large" id="'receiver_account'" nz-input style="width: 75%;">
+                    <input formControlName="receiver_account" id="'receiver_account'" nz-input style="width: 75%;">
                 </nz-input-group>
                 <p nz-form-explain *ngIf="(receiver_account.dirty || receiver_account.touched) && receiver_account.errors?.required">
                     请输入收款账户
@@ -38,7 +38,7 @@ import { TransferService } from './transfer.service';
                 <label for="receiver_name" nz-form-item-required>收款姓名</label>
             </div>
             <div nz-form-control nz-col [nzSm]="20" nzHasFeedback [nzValidateStatus]="receiver_name">
-                <nz-input formControlName="receiver_name" nzSize="large" [nzId]="'receiver_name'"></nz-input>
+                <nz-input formControlName="receiver_name" [nzId]="'receiver_name'"></nz-input>
                 <ng-container *ngIf="receiver_name.dirty || receiver_name.touched">
                     <p nz-form-explain *ngIf="receiver_name.errors?.required">请输入收款姓名</p>
                     <p nz-form-explain *ngIf="receiver_name.errors?.minlength">至少2个字符以上</p>
@@ -50,7 +50,7 @@ import { TransferService } from './transfer.service';
                 <label for="amount" nz-form-item-required>转账金额</label>
             </div>
             <div nz-form-control nz-col [nzSm]="20" nzHasFeedback [nzValidateStatus]="amount">
-                <nz-input formControlName="amount" nzSize="large" [nzId]="'amount'">
+                <nz-input formControlName="amount" [nzId]="'amount'">
                     <ng-template #prefix>￥</ng-template>
                 </nz-input>
                 <ng-container *ngIf="amount.dirty || amount.touched">
@@ -63,7 +63,7 @@ import { TransferService } from './transfer.service';
         </div>
         <div nz-form-item nz-row>
             <div nz-form-control nz-col [nzSpan]="20" [nzOffset]="4">
-                <button nz-button [nzType]="'primary'" nzSize="large" [disabled]="form.invalid">下一步</button>
+                <button nz-button [nzType]="'primary'" [disabled]="form.invalid">下一步</button>
             </div>
         </div>
     </form>
